@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  NavigationStacks
+//  Navigation
 //
 //  Created by Scholar on 6/5/25.
 //
@@ -9,15 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack {
+                Text("This is the root view🌴🌺🥭✨")
+                NavigationLink(destination:
+                                Text( " You've arrived to the second view")) {
+                    Text ("Click Me")
+                }
+                NavigationLink(destination: Text(" You've arrived to the third view")) {
+                    Text("Open")
+                }
+            }
+            //end VStack
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode( .inline)
+            .navigationBarHidden(true)
         }
-        .padding()
+        //end NavStack
     }
+    //end body
 }
+//end struct
 
 #Preview {
     ContentView()
